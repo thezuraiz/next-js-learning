@@ -1,4 +1,5 @@
 import { Product } from "@/data/products";
+import Image from "next/image";
 
 const ProductCard = (product: Product) => {
   return (
@@ -6,8 +7,11 @@ const ProductCard = (product: Product) => {
       key={product.id}
       className="p-5 rounded-xl border block shadow-md hover:rounded-lg transition-all cursor-pointer"
     >
-      <img
+      <Image
+        // For internal url use src= {'/'+product.imageUrl}
         src={product.imageUrl}
+        height={300}
+        width={400}
         alt={product.name}
         className="item-center rounded-xl w-full my-4"
       />
